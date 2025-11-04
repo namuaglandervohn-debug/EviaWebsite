@@ -1,0 +1,433 @@
+
+/* style.css - EVIA Website */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+:root{
+  --pink:#FFE9EE;
+  --maroon:#7B0026;
+  --muted:#6b6b6b;
+}
+*{box-sizing:border-box}
+body{
+  font-family: 'Poppins', sans-serif;
+  color:#222;
+  background:#fff;
+}
+
+/* Make sure the navbar stays on top */
+.navbar-custom {
+  background-color: #8B0000; /* example color — change to your theme */
+  z-index: 1050;
+}
+
+/* Prevent content from hiding under the navbar */
+body {
+  padding-top: 56.4px; /* adjust based on your navbar height */
+}
+.navbar-custom{
+  background: var(--pink);
+}
+.navbar-brand{
+  font-weight:700;
+  color:var(--maroon) !important;
+}
+.nav-link{
+  color:var(--maroon) !important;
+  font-weight:600;
+}
+.header-hero{
+  background: linear-gradient(180deg, rgba(255,233,238,1) 0%, rgba(255,255,255,0) 100%);
+  padding:60px 0;
+}
+.btn-maroon{
+  background:var(--maroon);
+  color:#fff;
+  border-radius:10px;
+  padding:10px 18px;
+  font-weight:600;
+  border:none;
+}
+.section-title{
+  color:var(--maroon);
+  font-weight:700;
+}
+.footer{
+  background:#f8f8f8;
+  padding:30px 0;
+  margin-top:40px;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;               /* fills available width */
+  max-width: 640px;          /* optional: limit max width */
+  margin: 0 auto;            /* centers horizontally */
+  overflow: hidden;
+  border-radius: 15px;       /* nice rounded corners */
+}
+
+.video-container video {
+  width: 100%;               /* responsive width */
+  height: auto;              /* maintains aspect ratio */
+  display: block;
+}
+
+@media (max-width:767px){
+  .hero-text{ text-align:center; margin-bottom:20px; }
+}
+/* --- Feature Cards --- */
+.feature-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: none;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  border-radius: 16px;
+}
+
+.feature-card h5 {
+  min-height: 50px; /* keeps title area equal */
+}
+
+.feature-card p {
+  min-height: 60px; /* keeps description area equal */
+}
+
+.row.mb-4 > div {
+  display: flex;
+}
+
+.feature-card {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all 0.8s ease-out;
+}
+
+/* ✨ Visible state (when scrolled into view) */
+.feature-card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Optional — alternate direction for visual variety */
+.feature-card:nth-child(even) {
+  transform: translateY(2px);
+}
+.feature-card:nth-child(odd) {
+  transform: translateY(2px);
+}
+
+.feature-card {
+  flex: 1;
+}
+
+.feature-card:hover{
+  flex: 1;
+  transition: 0.5s ease;
+  transform: translateY(-10px);
+}
+
+/* 🔹 Animation setup */
+.hero-card {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease-out;
+}
+
+/* 🔹 When the card becomes visible */
+.hero-card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero-card {
+  flex: 1;
+}
+
+.hero-card:hover{
+  flex: 1;
+  transition: 0.5s ease;
+  transform: translateY(-10px);
+}
+
+.rounded-30 {
+  border-radius: 30px;
+}
+
+.download-app {
+  background-color: #fff;
+}
+
+.download-app h2 {
+  color: #000;
+}
+
+.download-app img {
+  transition: transform 0.3s ease;
+}
+
+.download-app img:hover {
+  transform: scale(1.05);
+}
+
+.download-app {
+  background-color: transparent !important; /* removes the white background */
+}
+
+body {
+  background-color: #f8f9fa; /* or your site’s background color */
+}
+
+.app-preview {
+  max-width: 500px;
+  filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.15)); /* optional for a subtle pro look */
+}
+
+/* 🌀 Slide-in animation setup */
+.slide-in {
+  opacity: 0;
+  transform: translateX(-60px);
+  transition: all 0.8s ease-out;
+}
+
+/* When it becomes visible */
+.slide-in.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* 🌀 Slide-in from right animation */
+.slide-in-right {
+  opacity: 0;
+  transform: translateX(60px);
+  transition: all 0.8s ease-out;
+}
+
+.slide-in-right.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* 🌀 Slide-in from left animation */
+.slide-in-left {
+  opacity: 0;
+  transform: translateX(-60px);
+  transition: all 0.8s ease-out;
+}
+
+.slide-in-left.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* 🌀 Slide-in from top animation */
+.slide-in-top {
+  opacity: 0;
+  transform: translateY(-60px);
+  transition: all 0.8s ease-out;
+}
+
+.slide-in-top.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Slide in from top animation */
+@keyframes slideFromTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.section-title {
+  animation: slideFromTop 1s ease forwards;
+}
+
+/* Slide in from right animation */
+@keyframes slideFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.slide-from-right {
+  animation: slideFromRight 1s ease forwards;
+}
+
+/* Slide in from left animation */
+@keyframes slideFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.slide-from-left {
+  animation: slideFromLeft 1s ease forwards;
+}
+
+/* Slide in from bottom animation */
+@keyframes slideFromBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slide-from-bottom {
+  animation: slideFromBottom 1s ease forwards;
+}
+
+.footer {
+  background-color: #f8f9fa;
+  border-top: 1px solid #ddd;
+  position: relative;
+}
+
+.footer-contacts {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: right;
+}
+
+.footer .bi {
+  color: #000;
+}
+
+.footer p, .footer small {
+  color: #000;
+  margin: 0;
+}
+
+/* 🖥️ Large desktop view (≥1200px) */
+@media (min-width: 1200px) {
+  .selponrajudni-container {
+    right: 0;              /* move slightly farther right */
+    top: 60%;                  /* adjust vertical position */
+    transform: translateY(-100%);
+    gap: 15px;
+  }
+  .selponrajudni-container img {
+    width: 130px;              /* slightly larger phones */
+  }
+  .app-preview {
+    max-width: 925px;
+  }
+}
+
+/* 📱 Tablet view */
+@media (max-width: 1133px) {
+  .selponrajudni-container {
+    position: static;           /* reset floating */
+    transform: none;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  .selponrajudni-container img {
+    width: 120px;
+  }
+
+  .video-container {
+    max-width: 500px;
+  }
+  .app-preview {
+    max-width: 700px;
+  }
+}
+
+/* 📱 Mobile view */
+@media (max-width: 576px) {
+  .selponrajudni-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  .selponrajudni-container img {
+    width: 60%;
+    transform: none;
+  }
+
+  .video-container {
+    max-width: 100%;         /* full width of screen */
+    padding: 0 10px;         /* small side padding */
+  }
+
+  .video-container video {
+    border-radius: 10px;
+  }
+
+  .footer-contacts {
+    position: static;
+    transform: none;
+    text-align: center;
+    margin-top: 15px;
+  }
+  .app-preview {
+    max-width: 100%;
+  }
+}
+
+.app-preview {
+  opacity: 1 !important;
+  visibility: visible !important;
+  animation: slideFromLeft 1.2s ease forwards !important;
+  display: block;
+  margin: 0 auto;
+}
+
+
+
+
+
+
+
+
+/*
+.selponrajudni-container {
+  position: absolute;
+  right: 0;
+  top: 31px;
+}
+
+#selponrajudni1{
+  position: absolute;
+  right: 200px;
+  margin-top: 100px;
+  width: 200px;
+}
+
+#selponrajudni2{
+  position: absolute;
+  right: 10px;
+  margin-top: 100px;
+  width: 200px;
+}
+
+#selponrajudni3{
+  position: absolute;
+  right: 100px;
+  margin-top: 200px;
+  width: 200px;
+}
+*/
